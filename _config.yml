@@ -2,7 +2,7 @@
 title: BY Blog
 SEOTitle: Jae | BY Blog
 header-img: img/post-bg-desk.jpg
-email: yuziyo.jae@gmail.com
+email: yuziyong.jae@gmail.com
 description: "Python爱好者."
 keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
 url: "http://yuuuuuy.github.io"          # your host, for absolute URL
@@ -11,7 +11,7 @@ github_repo: "https://github.com/yuuuuuy/yuuuuuy.github.io.git" # you code repos
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
+sidebar-about-description: "Python爱好者"
 sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
