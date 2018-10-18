@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      Centos7安装nginx
-subtitle:   Centos7安装nginx
+title:      Centos7关闭防火墙与SeLinux
+subtitle:   Centos7关闭防火墙与SeLinux
 date:       2018-10-18
 author:     Jae
 header-img: img/post-bg-digital-native.jpg
