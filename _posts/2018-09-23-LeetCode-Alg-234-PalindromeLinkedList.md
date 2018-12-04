@@ -50,7 +50,7 @@ Example 2:
     5、以right!=nullptr为条件，lift和right同时后移并逐一比较。
 
 ### 5、实现
-
+    [c++]
     class Solution {
     public:
         //反转单链表
@@ -99,6 +99,45 @@ Example 2:
             return true;
         }
     };
+
+    [Java]
+    public boolean isPalindrome(ListNode head) {
+        if (head == null)
+        {
+            return true;
+        }
+
+        ListNode i = head;
+        ListNode j = head;
+
+        // 找到单链表的中间节点
+        while (j.next != null && j.next.next != null)
+        {
+            i = i.next;
+            j = j.next.next;
+        }
+        i = i.next;
+        ListNode t = i;
+        ListNode prev = null;
+        while (t != null)
+        {
+            t = t.next;
+            i.next = prev;
+            prev = i;
+            i = t;
+        }
+        // 反转完成
+        while (prev != null)
+        {
+            if (head.val != prev.val)
+            {
+                return false;
+            }
+            head = head.next;
+            prev = prev.next;
+        }
+        return true;
+    }
 
 ### 6、他山之石
 
