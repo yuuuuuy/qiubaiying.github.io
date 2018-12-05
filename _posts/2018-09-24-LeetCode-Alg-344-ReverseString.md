@@ -52,5 +52,43 @@ Example 2:
     };
 
 最开始的实现是自己定义一个临时变量用来辅助交换两个元素，但是string提供swap函数来交换两个值，所以还是直接使用swap函数来帮助我们完成这个操作。
+### 4、实现(Java)
+在```Java```中，```String```是不可变对象，所以不能直接在字符串上交换字符串中的字符，于是想到了```StringBuilder```类，这个类是可变的。哪两者有什么区别的？
+
+```String```是不可变的，从源码可看出:
+
+    public final class String
+    implements java.io.Serializable, Comparable<String>, CharSequence {
+    /** The value is used for character storage. */
+    private final char value[];  
+    ...
+
+```StringBUilder```是可变的:
+
+    abstract class AbstractStringBuilder implements Appendable, CharSequence {
+    /**
+     * The value is used for character storage.
+     */
+    char[] value;
+    ...
+于是将字符串转为StringBuilder对象，然后使用```setCharAt()```方法交换字符。具体实现如下：
+
+    public String reverseString(String s) {
+        StringBuilder sb = new StringBuilder(s);
+        int i = 0;
+        int j = s.length() - 1;
+
+        while (i < j)
+        {
+            char c = s.charAt(i);
+            sb.setCharAt(i, s.charAt(j));
+            sb.setCharAt(j, c);
+            i++;
+            j--;
+        }
+
+        return sb.toString();
+    }
+
 
 ### 5、END
