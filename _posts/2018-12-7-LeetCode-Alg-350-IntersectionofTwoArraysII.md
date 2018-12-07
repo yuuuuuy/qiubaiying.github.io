@@ -32,7 +32,7 @@ Note:
 
 - 首先想到定义一个字典，将一个长度较短的数组中的元素作为字典的key，出现的次数作为value存储到字典中，然后遍历另一个数组，如果元素在字典中，且字典对应的value大于0，就将该元素存放到结果集中，同时将该值对应的value值减小1。
 
-### 3、实现(c++)
+### 3、实现(Java)
 
     public int[] intersect(int[] nums1, int[] nums2) {
         if (nums1.length == 0 || nums2.length == 0)
