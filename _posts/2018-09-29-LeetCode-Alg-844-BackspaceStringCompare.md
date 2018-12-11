@@ -50,8 +50,19 @@ Example 4:
 
 - 思路一：定义两个空栈，将非```#```字符入栈，如果遇到```#```就将栈定元素弹出，
 直到遍历完该字符串。
+- 思路二：定义一个函数用来格式化字符串，
 
-### 3、实现(c++)
+    1、定义两个指针```i j```分别指向字符串的最后一个元素；
+
+    2、```j```所指的字符不为```#```则将```j```指向的值赋给```i```指向的位置，否则跳转到步骤3;
+
+    3、```j```指针往前遍历，统计```#```连续出现的次数和赋值给```count```变量；
+
+    4、```j```指针往前跳过```count```个字符，过程中如果j遇到的```非#```则跳过，否则```count++```，直到跳过```count```个字符
+
+    5、返回```i```之后的字串，即是格式化后的字符串
+
+### 3、思路一实现(c++)
 
     class Solution {
     public:
@@ -93,17 +104,68 @@ Example 4:
             return a_stk == b_stk; //相当于比较容器适配器底层的容器
         }
     };
+### 4、思路二实现(Java)
+    public class Solution {
 
-### 4、他山之石
+        private String formatStr(String str)
+        {
+            if (str.length() == 0)
+            {
+                return str;
+            }
 
-在查看别人的所提交的代码中发现一种解法：
+            int i = str.length() - 1;
+            int j = i;
+            StringBuilder sb = new StringBuilder(str);
+            while (j >= 0 && i >= 0)
+            {
+                if (str.charAt(j) != '#')
+                {
+                    sb.setCharAt(i, sb.charAt(j));
+                    i--;
+                    j--;
+                }else
+                {
+                    int count = 0;
+                    while (j >= 0 && str.charAt(j) == '#')
+                    {
+                        count++;
+                        j--;
+                    }
+                    // 跳过需要忽略的字符,如果在忽略字符中再次遇到#，继续增加计数器
+                    while (j >= 0 && count > 0)
+                    {
+                        if(str.charAt(j) != '#')
+                        {
+                            j--;
+                            count--;
+                        }else
+                        {
+                            j--;
+                            count++;
+                        }
+                    }
+                }
+            }
+            return sb.toString().substring(i+1, str.length());
+        }
+
+        public boolean backspaceCompare(String S, String T) {
+            String s = formatStr(S);
+            String t = formatStr(T);
+            return s.equals(t);
+        }
+    }
+### 5、他山之石
+
+在查看别人的所提交的代码中发现一种解法,其实和思路二类似不过人家实现的代码更简单：
 将字符串从后往前，将```#```与所对应字符呼唤位置，然后返回新子串的开始下标。
 
     如 string S = "abc##c";
     经过转换后变为 S变为abc#ac，并返回新子串开始下标4；
     最后比较两个子串是否相等。
 
-### 5、实现(C++)
+### 6、实现(C++)
 
     int squeeze(string& S)
         {
