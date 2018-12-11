@@ -75,20 +75,24 @@ Example 2:
 
     public String reverseString(String s) {
         StringBuilder sb = new StringBuilder(s);
-        int i = 0;
-        int j = s.length() - 1;
 
-        while (i < j)
-        {
-            char c = s.charAt(i);
-            sb.setCharAt(i, s.charAt(j));
-            sb.setCharAt(j, c);
-            i++;
-            j--;
-        }
-
-        return sb.toString();
+        return sb.reverse().toString();
     }
 
+### 5、不使用StringBuilder
+
+    public String reverseString(String s)
+    {
+       char[] array = s.toCharArray();
+        int n = s.length() - 1;
+        for (int j = (n-1) >> 1; j >= 0; j--) {
+            int k = n - j;
+            char cj = array[j];
+            char ck = array[k];
+            array[j] = ck;
+            array[k] = cj;
+        }
+        return new String(array);
+    }
 
 ### 5、END
