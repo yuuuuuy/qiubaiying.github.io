@@ -11,7 +11,7 @@ tags:
 ---
 ### 1、题目
 
-###### Given an array of ```2n``` integers, your task is to group these integers into n pairs of integer, say ```(a1, b1)```, ```(a2, b2)```, ```...```, ```(an, bn)``` which makes sum of ```min(ai, bi)``` for all ```i``` from ```1``` to ```n``` as large as possible.
+Given an array of ```2n``` integers, your task is to group these integers into n pairs of integer, say ```(a1, b1)```, ```(a2, b2)```, ```...```, ```(an, bn)``` which makes sum of ```min(ai, bi)``` for all ```i``` from ```1``` to ```n``` as large as possible.
 
     Example 1:
     Input: [1,4,3,2]
@@ -45,7 +45,9 @@ Note:
         }
         return sum;
     }
+
 ### 4、他山之石
+
 参考了其他人提供的方法，算法描述如下：
 
 由于题中给出```n```的范围为```[1, 10000]```，数组中每一个元素取值范围为```[-10000, 10000]```
@@ -58,6 +60,7 @@ Note:
 - 遍历新数组，内层```while```循环判断该下标位置的值是否为```0```，不为```0```说明该位置对应有原数组中的元素```k```个，并使用一个```boolean```变量```flag```(初始值为```true```)控制取是否取元素；
 
 ### 5、实现(Java)
+
     public int arrayPairSum(int[] nums) {
             byte[] mark = new byte[200001];
             for (int elem : nums)
