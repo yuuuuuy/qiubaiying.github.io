@@ -24,7 +24,9 @@ Example 2:
     Input: 14
     Output: false
 ### 2、思路
+
 使用二分查找的思想，定义两个指针```low high```初始指向```1和num```,然后计算中间值```mid```,再对mid进行```平方```和```num```进行比较来决定```low high```的走向。
+
 ### 3、实现
     public boolean isPerfectSquare(int num) {
         if (num < 0)
@@ -56,8 +58,10 @@ Example 2:
 
         return false;
     }
+    
 当测试的输入较大时，其数值的一半再平方将会超出```int```所能表示的范围。于是我们不对```mid```进行```平方```，而是使用```num/mid```得到```商```来和```mid```进行比较；
 但是有个问题，使用```/```取```商```可能会造成精度的丢失，导致错误。于是引入```余数```，若```商```和```mid```相同且```余数```为```0```则说明该数是平方数。
+
 ### 4、修改
     public boolean isPerfectSquare(int num) {
         if (num < 0)
