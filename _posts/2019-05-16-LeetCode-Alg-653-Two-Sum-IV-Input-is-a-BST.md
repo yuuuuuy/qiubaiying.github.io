@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      LeetCode-Alg-653-Two-Sum-IV-Input-is-a-BST
-subtitle:   LeetCode-Alg-653-Two-Sum-IV-Input-is-a-BST
+title:      LeetCode-Alg-653-Two Sum IV Input is a BST
+subtitle:   LeetCode-Alg-653-Two Sum IV Input is a BST
 date:       2019-05-16
 author:     Jae
 header-img: img/post-bg-github-cup.jpg
