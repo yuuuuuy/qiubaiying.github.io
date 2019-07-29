@@ -46,8 +46,11 @@ Given a string s, find the longest palindromic subsequence's length in s. You ma
 #### 2.3 初始条件和边界情况
 
 ```f[i][i] = 1```
+
 答案为```f[i][j]```中最大值
+
 时间复杂度为```O(n^2)```
+
 空间负责度为```O(n^2)```
 
 ### 3、实现
