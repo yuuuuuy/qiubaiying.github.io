@@ -99,20 +99,20 @@ service-worker: true
 
 # Friends
 friends: [
-    {
-        title: "陈某龙",
-        href: "https://github.com/mathbugua"
-    },{
-        title: "刘某坤",
-        href: "https://github.com/MerleLiuKun"
-    },{
-        title: "laidu",
-        href: "https://github.com/laidu"
-    },{
-        title: "myTeemo",
-        href: "https://github.com/myTeemo"
-    },{
-        title: "简书·Jae",
-        href: "https://www.jianshu.com/u/1a1c348ce5f4"
-    }
+{
+  title: "陈某龙",
+  href: "https://github.com/mathbugua"
+},{
+  title: "刘某坤",
+  href: "https://github.com/MerleLiuKun"
+},{
+  title: "laidu",
+  href: "https://github.com/laidu"
+},{
+  title: "myTeemo",
+  href: "https://github.com/myTeemo"
+},{
+  title: "简书·Jae",
+  href: "https://www.jianshu.com/u/1a1c348ce5f4"
+}
 ]
